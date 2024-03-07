@@ -1,13 +1,13 @@
 <template>
   <BarChart />
-  <HomeView />
+  <barView />
 </template>
 
 <script>
 import BarChart from '@/components/BarChart.vue';
-import HomeView from './views/HomeView.vue';
+import barView from './views/barView.vue';
 export default {
   name: 'App',
-  components: { BarChart, HomeView }
+  components: { BarChart, barView }
 }
 </script>
