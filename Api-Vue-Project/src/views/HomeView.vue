@@ -16,6 +16,8 @@ async function getPokemon() {
 onMounted(() => {
   getPokemon();
 })
+
+console.log(pokemon.value)
 </script>
 
 <style lang="scss" scoped>
