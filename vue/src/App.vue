@@ -14,3 +14,4 @@ import BarChart from './components/BarChart.vue'
 
 <style scoped>
 </style>
+./components/BarChart.vue
