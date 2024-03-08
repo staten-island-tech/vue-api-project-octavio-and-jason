@@ -1,9 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-<<<<<<< HEAD
 import BarChart from '../views/BarChart.vue'
-=======
-import HomeView from '../views/BarChart.vue'
->>>>>>> main
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
