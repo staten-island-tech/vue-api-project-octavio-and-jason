@@ -10,7 +10,7 @@ const crash = ref("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
 async function getCrash() {
   let res = await fetch(crash)
   let data = await res.json();
-  crash.value = data.crash_date;
+  crash.value = data;
 }
 
 onMounted(() => {
