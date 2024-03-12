@@ -5,8 +5,8 @@ import BarChart from './views/BarChart.vue'
 
 <template>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Bar Chart</RouterLink>
+        <RouterLink to="/about">Pie Chart</RouterLink>
       </nav>
       <BarChart/>
   <RouterView />
@@ -14,4 +14,3 @@ import BarChart from './views/BarChart.vue'
 
 <style scoped>
 </style>
-./components/BarChart.vue
