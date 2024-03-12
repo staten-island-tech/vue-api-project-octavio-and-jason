@@ -6,18 +6,18 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const pokemon = ref("https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data")
-async function getPokemon() {
-  let res = await fetch(pokemon)
+const crash = ref("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
+async function getCrash() {
+  let res = await fetch(crash)
   let data = await res.json();
-  pokemon.value = data.results;
+  crash.value = data.crash_date;
 }
 
 onMounted(() => {
-  getPokemon();
+  getCrash();
 })
 
-console.log(pokemon.value)
+console.log(crash)
 </script>
 
 <style lang="scss" scoped>
