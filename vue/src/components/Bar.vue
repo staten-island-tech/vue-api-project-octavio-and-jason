@@ -23,11 +23,11 @@ export default {
     loaded: false,
     chartData: null
   }),
-  async onMounted () {
+  async Mounted () {
     this.loaded = false
-
+    
     try {
-      const { userlist } = await fetch('/api/userlist')
+      const { userlist } = await fetch(crash)
       this.chartdata = userlist
 
       this.loaded = true
