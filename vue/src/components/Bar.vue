@@ -27,9 +27,9 @@ export default {
     this.loaded = false
     
     try {
-      const { userlist } = await fetch('BarChart/crash')
+      const { userlist } = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
       this.chartdata = userlist
-
+      
       this.loaded = true
     } catch (e) {
       console.error(e)

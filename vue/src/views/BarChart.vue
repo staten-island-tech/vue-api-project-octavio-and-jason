@@ -8,8 +8,8 @@
 import { ref, onMounted } from 'vue';
 const crash = ref("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
 async function getCrash() {
-  let res = await fetch(crash)
-  let data = await res.json();
+  const res = await fetch(crash)
+  const data = await res.json();
   crash.value = data;
 }
 
@@ -20,6 +20,6 @@ onMounted(() => {
 console.log(crash)
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
