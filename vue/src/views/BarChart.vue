@@ -6,11 +6,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const crash = ref("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
+const crash = ref('')
 async function getCrash() {
-  const res = await fetch(crash)
-  const data = await res.json();
-  crash.value = data;
+  let res = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
+  let data = await res.json();
+  crash.value = data.results;
 }
 
 onMounted(() => {
