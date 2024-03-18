@@ -23,11 +23,11 @@ export default {
     loaded: false,
     chartData: null
   }),
-  async Mounted () {
+  async mounted () {
     this.loaded = false
     
     try {
-      const { userlist } = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
+      const { userlist } = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json?limit=151&offset=0")
       this.chartdata = userlist
       
       this.loaded = true
