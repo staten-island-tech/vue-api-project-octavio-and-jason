@@ -19,6 +19,7 @@ export default {
   name: 'BarChart',
   components: { Bar },
   data: () => ({
+    labels: [ data.borough ],
     loaded: false,
     chartData: null
   }),
