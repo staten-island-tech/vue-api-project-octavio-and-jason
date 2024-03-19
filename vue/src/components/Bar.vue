@@ -12,6 +12,7 @@
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { setLabels } from 'vue-chartjs/dist/utils'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -19,7 +20,7 @@ export default {
   name: 'BarChart',
   components: { Bar },
   data: () => ({
-    labels: [ data.borough ],
+    labels: [""],
     loaded: false,
     chartData: null
   }),
@@ -31,6 +32,7 @@ export default {
         try {
           const response = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json");
           const data = await response.json();
+          labels.value = data.borough
           console.log(data);
         } catch (error){
           console.log(error);
