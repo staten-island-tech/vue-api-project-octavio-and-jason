@@ -27,11 +27,18 @@ export default {
     this.loaded = false
     
     try {
-      const { userlist } = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json?limit=151&offset=0")
-      this.chartdata = userlist
-      
-      this.loaded = true
-    } catch (e) {
+      const URL = "https://data.cityofnewyork.us/resource/h9gi-nx95.json";
+      async function getCrashData(URL){
+        try {
+          const response = await fetch(URL);
+          const data = await response.json();
+          console.log(data);
+        } catch (error){
+          console.log(error);
+        }
+      }
+      getCrashData();
+    } catch(e) {
       console.error(e)
     }
   }
