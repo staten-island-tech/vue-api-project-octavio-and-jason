@@ -6,9 +6,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const crash = ref('')
+const crash = ref("")
 async function getCrash() {
-  let res = await fetch("https://data.cityofnewyork.us/api/odata/v4/h9gi-nx95")
+  let res = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
   let data = await res.json();
  return data
 }
