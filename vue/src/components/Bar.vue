@@ -12,7 +12,6 @@
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import getCrash from '@/views/BarChart.vue'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -27,10 +26,9 @@ export default {
     this.loaded = false
     
     try {
-      const URL = "https://data.cityofnewyork.us/resource/h9gi-nx95.json";
-      async function getCrashData(URL){
+      async function getCrashData(){
         try {
-          const response = await fetch(URL);
+          const response = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json");
           const data = await response.json();
           console.log(data);
         } catch (error){
