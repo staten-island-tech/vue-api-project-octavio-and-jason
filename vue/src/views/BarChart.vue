@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2> {{ crash }} </h2>
     <BarComponent>
       
     </BarComponent>

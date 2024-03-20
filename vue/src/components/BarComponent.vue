@@ -12,7 +12,6 @@
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { setLabels } from 'vue-chartjs/dist/utils'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -34,6 +33,8 @@ export default {
           const data = await response.json();
           labels.value = data.borough
           console.log(data);
+          const Crashes = Object.entries(data)
+        console.log(Crashes)
         } catch (error){
           console.log(error);
         }
