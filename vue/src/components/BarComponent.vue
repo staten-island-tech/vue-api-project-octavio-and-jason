@@ -15,26 +15,42 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
+const props = defineProps({
+  crash: Object,
+  id: Number
+})
+
 export default {
   name: 'BarChart',
   components: { Bar },
+  props: {
   data: () => ({
-    labels: [""],
     loaded: false,
-    chartData: null
-  }),
+    chartData: {
+      type: Object,
+      required: true
+    },
+    chartOptions: {
+      type: Object,
+      default: () => {}
+    }
+  })
+},
   async mounted () {
     this.loaded = false
-    
-    try {
-      async function getCrashData(){
+
         try {
-          const response = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json");
-          const data = await response.json();
-          labels.value = data.borough
-          console.log(data);
-          const Crashes = Object.entries(data)
-        console.log(Crashes)
+          const {list} = await fetch("https://data.cityofnewyork.us/resource/h9gi-nx95.json");
+          this.chartData = list
+
+          this.loaded = true
+        }catch (e) {
+          console.error(e)
+        }
+      }
+    }
+          /* console.log(data);
+          return data
         } catch (error){
           console.log(error);
         }
@@ -44,7 +60,7 @@ export default {
       console.error(e)
     }
   }
-}
+} */
 //     return {
 //       chartData: {
 //         labels: [ 'January', 'February', 'March' ],
