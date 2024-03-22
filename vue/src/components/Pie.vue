@@ -12,7 +12,7 @@ id="my-chart-id"
 import { Bar } from 'vue-chartjs' 
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
-ChartJs.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
     name: 'BarChart',
@@ -20,7 +20,7 @@ export default {
     data: () => ({
         loaded: false,
         chartData: {
-            labels: [ {data.borough} ]
+            labels: [ { data } ],
             datasets: [ {
                 label: 'Crash',
                 data: []
@@ -28,9 +28,10 @@ export default {
             async onMounted(){
                 this.loaded=false
                 try{
-                    const res = await fetch ("https://data.cityofnewyork.us/resource/h9gi-nx95.json")
+                    const res = await fetch ("https://data.cityofnewyork.us/resource/h9gi-nx95.json");
                     let data = await res.json();
-
+                } catch(error) {
+                    console.error(error);
                 }
             }
         }

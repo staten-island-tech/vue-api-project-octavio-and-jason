@@ -1,12 +1,9 @@
 <template>
   <div>
-    <h2> {{ crash.borough }} </h2>
-    <BarComponent
-      v-for="{borough, crash_date} in crash" 
-      :key="borough.name"
-      :id="crash_date"
-      :crash="borough"
-      />
+    <h2></h2>
+    <BarComponent>
+      
+    </BarComponent>
   </div>
 </template>
 
