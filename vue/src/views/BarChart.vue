@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h2></h2>
-    <BarComponent>
-      
-    </BarComponent>
+    <BarComponent
+       v-for="crashes in crash" 
+       :key="crashes.borough"
+       :Crash="crashes"
+       />
   </div>
 </template>
 
