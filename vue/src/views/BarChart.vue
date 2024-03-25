@@ -1,10 +1,14 @@
 <template>
   <div>
-
+    <h2></h2>
+    <BarComponent>
+      
+    </BarComponent>
   </div>
 </template>
 
 <script setup>
+import BarComponent from '@/components/BarComponent.vue';
 import { ref, onMounted } from 'vue';
 const crash = ref("")
 async function getCrash() {
