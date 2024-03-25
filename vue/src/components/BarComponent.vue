@@ -27,6 +27,16 @@ const props = ({
 export default {
   name: 'BarChart',
   components: { Bar },
+  props: {
+    chartData: {
+      type: Object,
+      required: true
+    },
+    chartOptions: {
+      type: Object
+      default: () => {}
+    }
+  }
   data() {
   return {
       chartData: {
