@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [ crash.borough ],
+        labels: [ crash.value.borough ],
         datasets: [
           { data: []}
         ]
@@ -50,6 +50,7 @@ export default {
     }
   }
 }
+  
 //   data() {
 //     return {
 //       chartData: null,
