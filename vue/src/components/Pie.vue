@@ -46,8 +46,8 @@
     },
     methods: {
       prepareChartData(data) {
-        this.chartData.labels = data.map(item => item.year);
-        this.chartData.datasets[0].data = data.map(item => item.crashes);
+        this.chartData.labels = data.map(item => item.borough);
+        this.chartData.datasets[0].data = data.map(item => item.number_of_persons_injured);
       }
     }
   };
@@ -55,4 +55,6 @@
   
   <style lang="scss" scoped>
   </style>
+
+<!-- use https://data.cityofnewyork.us/resource/h9gi-nx95.json -->
   
