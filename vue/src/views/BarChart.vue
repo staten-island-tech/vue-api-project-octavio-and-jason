@@ -1,4 +1,5 @@
 <template>
+    <h2>Crash Based by Borough</h2>
   <div class="chart">
   <BarComponent v-if="loaded"
   :Data="chartData"
@@ -51,7 +52,7 @@ async function getData () {
       }
   }
 
-  chartData.value.datasets[0].data = Object.values(crashCounter);
+  chartData.value.datasets.data = Object.values(crashCounter);
 
   loaded.value = true;
 }
