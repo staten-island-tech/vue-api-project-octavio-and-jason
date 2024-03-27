@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import BarChart from './views/BarChart.vue'
 </script>
 
 <template>
@@ -8,9 +7,11 @@ import BarChart from './views/BarChart.vue'
         <RouterLink to="/">Bar Chart</RouterLink>
         <RouterLink to="/about">Pie Chart</RouterLink>
       </nav>
-      <BarChart/>
   <RouterView />
 </template>
 
 <style scoped>
+nav {
+  width: 50%,
+}
 </style>
