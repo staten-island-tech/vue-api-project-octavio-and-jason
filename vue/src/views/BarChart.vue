@@ -40,11 +40,15 @@ async function getData () {
   chartData.value.datasets = [{
       data: []
   }];
-  const crashCounter = {};
+
   for (let crash of data) {
       if (!chartData.value.labels.includes(crash.borough)) {
           chartData.value.labels.push(crash.borough);
       }
+    }
+
+const crashCounter = {};
+for (let crash of data) {
       if (!crashCounter[crash.borough]) {
           crashCounter[crash.borough] = 0;
       } else {
@@ -60,6 +64,15 @@ async function getData () {
 const chartOptions = {
   responsive: true
 }
+  datasets: [
+    {
+        label: 'Crashes',
+        backgroundColor: '#f87979',
+    }
+]
+}
+
+
 
 </script>
 
