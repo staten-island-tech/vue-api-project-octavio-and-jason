@@ -25,12 +25,22 @@ import { RouterLink, RouterView } from 'vue-router'
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 10px;
+  color: black;
 }
 
 .bar:hover,
 .pie:hover {
   background-color: #cfcfcf;
   border-color: #8a8a8a;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  align-items: center;
 }
 </style>
 
