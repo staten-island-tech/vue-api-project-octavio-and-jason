@@ -1,25 +1,33 @@
 <template>
-  <div class="about">
-    <h1>Pie Chart</h1>
+  <div>
+    <h1>Crash Based by Borough</h1>
+    <template v-if="crashData.length > 0">
+      <PieGraph :crashData="crashData" :selectedOption="selectedOption"/>
+    </template> 
   </div>
-  <Pie>
-    
-  </Pie>
 </template>
 
 <script setup>
-import Pie from '@/components/Pie.vue';
-</script>
+import { ref, onBeforeMount } from 'vue';
+import PieGraph from '@/components/Pie.vue';
 
-<style lang="scss" scoped>
+const crashData = ref([]);
+const selectedOption = ref('borough');
 
-</style>
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+async function getCrashData() {
+  try {
+    const response = await fetch('https://data.cityofnewyork.us/resource/h9gi-nx95.json');
+    if (!response.ok) {
+      throw new Error('Failed to fetch crash data');
+    }
+    crashData.value = await response.json();
+  } catch (error) {
+    console.error('Error fetching crash data', error);
   }
 }
+onBeforeMount(getCrashData);
+</script>
+
+<style scoped>
+
 </style>

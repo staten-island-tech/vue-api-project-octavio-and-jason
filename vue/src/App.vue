@@ -14,7 +14,5 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-nav {
-  width: 50%,
-}
+
 </style>
