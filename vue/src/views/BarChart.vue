@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h1 class="title">Crash Contributing Factors</h1>
-      <h2 class="subtitle">Top 5 Contributing Factors</h2>
+      <h1 class="title">Crash Based By Factors</h1>
+      <h2 class="subtitle">Top 5 Factors</h2>
       <div class="bar">
         <template v-if="crashes.length > 0">
           <BarGraph :crashes="crashes" />
@@ -32,6 +32,19 @@
   </script>
   
   <style scoped>
+  .title, .subtitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
   
+  .subtitle {
+    color: #7c7b7b;
+  }
   </style>
   
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> main
