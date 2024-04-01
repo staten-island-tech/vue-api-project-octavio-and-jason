@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Crash Based by Borough</h1>
+    <h1>Crash Based By Borough</h1>
     <template v-if="crashData.length > 0">
       <PieGraph :crashData="crashData" :selectedOption="selectedOption"/>
     </template> 
@@ -29,5 +29,9 @@ onBeforeMount(getCrashData);
 </script>
 
 <style scoped>
-
+h1 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
 </style>

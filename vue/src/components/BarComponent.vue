@@ -62,5 +62,12 @@ export default {
 </script>
 
 <style scoped>
-
+.container {
+  display: flex;
+  justify-content: center;
+}
+canvas {
+  max-width: 1500px;
+  max-height: 600px;
+}
 </style>

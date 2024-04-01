@@ -36,7 +36,7 @@ export default {
           }, {});
 
           this.chartData = {
-            labels: Object.keys(boroughCounts),
+            labels: Object.keys(boroughCounts), //borough names as labels
             datasets: [
               {
                 label: 'Crashes by Borough',
@@ -60,5 +60,13 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+}
 
+canvas {
+  max-width: 1500px;
+  max-height: 700px;
+}
 </style>
