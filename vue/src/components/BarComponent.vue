@@ -26,18 +26,18 @@ export default {
     this.loaded = false
 
     try {
-      const factors = this.crashes((number, crash) => {
+      const factors = this.crashes.reduce((acc, crash) => {
         const factor1 = crash.contributing_factor_vehicle_1
         const factor2 = crash.contributing_factor_vehicle_2
-        
+
         if (factor1) {
-          number[factor1] = (number[factor1] || 0) + 1
+          acc[factor1] = (acc[factor1] || 0) + 1
         }
         if (factor2) {
-          number[factor2] = (number[factor2] || 0) + 1
+          acc[factor2] = (acc[factor2] || 0) + 1
         }
 
-        return number
+        return acc
       }, {})
 
       const sortedFactors = Object.entries(factors)
